@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MainView">
+        <attr name="headerHeight" format="dimension" />
+        <attr name="rowMargin" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="padding" format="dimension" />
+        <attr name="indent" format="dimension" />
+    </declare-styleable>
+</resources>

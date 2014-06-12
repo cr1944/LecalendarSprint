@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LecalendarSprint</string>
+    <string name="weeks_number">显示列数</string>
+    <string name="goto_week">跳转至</string>
+    <string name="text1">规格准备</string>
+    <string name="text2">开发</string>
+    <string name="text3">fix bug</string>
+    <string name="current">当前</string>
+
+</resources>

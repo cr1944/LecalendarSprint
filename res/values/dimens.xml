@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_height">50dp</dimen>
+    <dimen name="row_margin">15dp</dimen>
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="line_width">2dp</dimen>
+    <dimen name="padding">6dp</dimen>
+    <dimen name="indent">20dp</dimen>
+</resources>
