@@ -101,11 +101,16 @@ public class MainView extends View {
      */
     public void setDates(DateTime date) {
         mTempDate = date;
-        resetDateStrings();
+        resetStrings();
         invalidate();
     }
 
-    private void resetDateStrings() {
+    public void refresh() {
+        resetStrings();
+        invalidate();
+    }
+
+    private void resetStrings() {
         if (mTempDate == null) {
             mTempDate = Utils.FIRSTDAY;
         }
@@ -119,9 +124,14 @@ public class MainView extends View {
         }
         int days = Days.daysBetween(Utils.FIRSTDAY, mTempDate).getDays();
         int index = days / Utils.PERIOD;
+        int validNamesSize = Utils.getSprintNames(getContext()).size();
         for (int i = 0; i < mSprintNumber; i++) {
-            int realIndex = Math.min(Utils.SPRINT_NAMES.length - 1, i + index);
-            mSprintStrings[i] = Utils.SPRINT_NAMES[realIndex];
+            int realIndex = i + index;
+            if (realIndex >= 0 && realIndex < validNamesSize) {
+                mSprintStrings[i] = Utils.getSprintNames(getContext()).get(realIndex);
+            } else {
+                mSprintStrings[i] = Utils.INVALID_SPRINT_NAME;
+            }
         }
         resetToday();
     }
@@ -155,7 +165,7 @@ public class MainView extends View {
             mLines[lineCount++] = h - mPadding - mFooterHeight;
             mDatesX[i] = mPadding + mIndent + mColumWidth * i;
         }
-        resetDateStrings();
+        resetStrings();
     }
 
     @Override

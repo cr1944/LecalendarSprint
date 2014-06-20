@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="ryan.lenovo.lecalendarsprint.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/settings" >
+        </activity>
     </application>
 
 </manifest>

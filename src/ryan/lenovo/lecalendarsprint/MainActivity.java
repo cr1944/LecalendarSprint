@@ -8,7 +8,11 @@ import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -56,6 +60,30 @@ public class MainActivity extends RoboActivity implements OnItemSelectedListener
         mCurrentIndex = Days.daysBetween(Utils.FIRSTDAY, DateTime.now()).getDays() / Utils.PERIOD;
         mDateTime = Utils.FIRSTDAY.plusDays(mCurrentIndex * Utils.PERIOD);
         mMainView.setDates(mDateTime);
+    }
+
+    @Override
+    protected void onResume() {
+        mMainView.refresh();
+        super.onResume();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = new MenuInflater(this);
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        final int itemId = item.getItemId();
+        if (itemId == R.id.item_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

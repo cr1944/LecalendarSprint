@@ -8,5 +8,10 @@
     <string name="text2">开发</string>
     <string name="text3">fix bug</string>
     <string name="current">当前</string>
+    <string name="settings">设置</string>
+    <string name="default_sprints">2.4#2.6#2.8#2.9#2.10#2.11#2.12#2.13#2.14</string>
+    <string name="sprint_name_input_tips">你输入的内容不含#，整体默认为一个迭代名称</string>
+    <string name="pref_sprint_name_title">编辑迭代名称</string>
+    <string name="pref_sprint_name_summary">输入迭代名称，以#隔开</string>
 
 </resources>

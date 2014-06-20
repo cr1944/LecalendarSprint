@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference android:key="pref_sprint_names"
+        android:title="@string/pref_sprint_name_title"
+        android:summary="@string/pref_sprint_name_summary"
+        android:persistent="true"
+        android:defaultValue="@string/default_sprints"
+        android:dialogTitle="@string/pref_sprint_name_title"
+        android:dialogMessage="@string/pref_sprint_name_summary" />
+
+</PreferenceScreen>
